@@ -9,14 +9,13 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 import Api from "@/Api";
 import BrandCard from "@/components/BrandCard";
 
 export default {
   data() {
     return {
-      brands: null,
       loading: true
     };
   },
@@ -24,6 +23,11 @@ export default {
     ...mapMutations({
       setBrands: "setBrands"
     }),
+  },
+  computed: {
+    ...mapGetters({
+      brands: "getBrands"
+    })
   },
   components: {
     BrandCard
@@ -35,7 +39,6 @@ export default {
     // save to vuex store
     this.setBrands(data);
    
-    this.brands = this.$store.state.brands;
     this.loading = false;
   }
 };

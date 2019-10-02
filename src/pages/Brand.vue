@@ -12,13 +12,12 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 import Api from "@/Api";
 
 export default {
   data() {
     return {
-      brand: null,
       loading: true
     };
   },
@@ -26,6 +25,11 @@ export default {
     ...mapMutations({
       setCurrentBrand: "setCurrentBrand"
     }),
+  },
+  computed: {
+    ...mapGetters({
+      brand: "getCurrentBrand"
+    })
   },
   async created() {
     // connect to api
@@ -35,7 +39,6 @@ export default {
     // save to vuex store
     this.setCurrentBrand(data);
 
-    this.brand = this.$store.state.currentBrand;
     this.loading = false;
   },
 };
