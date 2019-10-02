@@ -1,4 +1,4 @@
-# test_upwork
+# Test project for Vue, Vuex and Vuetify
 
 ## Project setup
 ```
@@ -10,20 +10,8 @@ yarn install
 yarn run serve
 ```
 
-### Compiles and minifies for production
-```
-yarn run build
+### Api endpoint
 ```
 
-### Run your tests
+Backend endpoint url is defined in 'src/Api.js'.
 ```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
